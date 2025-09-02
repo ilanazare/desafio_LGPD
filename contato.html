@@ -37,21 +37,37 @@
             </div>
             <div>
                 <h2 class="titulo">Sobre Você</h2>
-            <form onsubmit="Post(this);">
-                <input type="text" name="nome" placeholder="NOME*" class="fordform" required>
-                <input type="text" name="sobrenome" placeholder="SOBRENOME*" class="fordform" required>
-                <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
-                <input type="text" name="cpf" placeholder="CPF*" class="fordform" required>                
+            <form onsubmit="Post(this); return false">
+                <input type="text" name="nome" id="nomeId" placeholder="NOME*" class="fordform" required>
+                <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>               
                 <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
-                <select name="contato" class="fordform" required>
-                    <option selected>COMO DESEJA SER CONTATADO</option>
-                    <option>TELEFONE</option>
-                    <option>E-MAIL</option>
+                <select name="tipo" class="fordform" required>
+                    <option selected>TIPO DE CONTATO</option>
+                    <option>Elogio</option>
+                    <option>Reclamação</option>
+                    <option>Solicitação</option>
                 </select>
-            <button type="submit">Enviar</button>
+                <textarea name="mensagem" placeholder="DIGITE SUA MENSAGEM AQUI" class="fordform"
+                        required></textarea>
+
+            <div class="lgpd-checkbox">
+                        <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A
+                            qualquer momento, será possível editar ou remover tais dados.</p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="termosCheckbox" onchange="validarEnvio()">
+                            <label for="termosCheckbox">Sim. Li e concordo com os <a
+                                    href="https://www.ford.com.br/politica-de-privacidade/">Termos e
+                                    Condições</a>.</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletterCheckbox">
+                            <label for="newsletterCheckbox">Sim. Também quero receber descontos e novidades.</label>
+                        </div>
+                    </div>
+                    
+            <button type="submit" id="enviarBtn">Enviar</button>
             </form>
             </div>
-        </div>
     </main>
     <footer>
         <nav id="social">
